@@ -552,6 +552,7 @@ function aimAt(point) {
 function runShot(name) {
   hud.hideOverlay();
   hud.hideBuy();
+  buyOpen = false;
   body.pitch = 0;
   body.yaw = 0;
   if (name === 'start') {
@@ -642,6 +643,7 @@ renderer.domElement.addEventListener('click', () => {
 });
 
 syncCamera();
+startRound(); // Round 1 must open its buy menu like every later round.
 refreshHud();
 if (shot) runShot(shot);
 else requestAnimationFrame(frame);

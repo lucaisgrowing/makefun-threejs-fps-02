@@ -84,9 +84,10 @@ export function createHud() {
   }
 
   function pips(el, alive, total, cls) {
-    const key = `${el.id}-${alive}`;
-    if (last[key]) return;
-    last[key] = true;
+    // Key on the element, not the count: the same alive count recurs every
+    // round, and a count-keyed cache freezes the dots at their first value.
+    if (last[el.id] === alive) return;
+    last[el.id] = alive;
     el.innerHTML = '';
     for (let i = 0; i < total; i += 1) {
       const dot = document.createElement('i');

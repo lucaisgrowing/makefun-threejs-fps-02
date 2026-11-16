@@ -85,9 +85,6 @@ export function createAudio() {
       noise(0.9, 400, 0.9, 'lowpass');
       tone(90, 0.7, 0.5, 'sine', 30);
     },
-    plantBeep() {
-      tone(1200, 0.07, 0.15, 'square');
-    },
     defuseBeep() {
       tone(900, 0.07, 0.15, 'square');
     },

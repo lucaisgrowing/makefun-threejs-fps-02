@@ -128,12 +128,6 @@ export function createRounds(world) {
       }
       return (state.bomb.defuse ?? 0) / 5;
     },
-    plantProgress() {
-      return (state.bomb.plant ?? 0) / 3.5;
-    },
-    defuseProgress() {
-      return (state.bomb.defuse ?? 0) / 5;
-    },
     dropSpike(pos) {
       state.spike = { carrier: null, dropped: true, pos: pos.clone() };
     },
